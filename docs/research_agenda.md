@@ -111,10 +111,72 @@ Lightweight temporal graph reasoning modules, such as temporal subgraph retrieva
 
 ---
 
+## Method Direction
+
+The project should not stop at a purely symbolic retrieval pipeline. The intended technical contribution is a **learnable temporal graph retriever** built on top of a symbolic graph representation.
+
+The guiding principle is:
+
+- **graph construction can be symbolic**
+- **retrieval and reasoning should become increasingly learnable**
+
+This keeps the graph interpretable and debuggable while ensuring the final method is more than hand-written logic.
+
+### What should remain symbolic
+
+- temporal graph construction
+- provenance tracking
+- dataset adapters
+- temporal validity constraints
+
+### What should become learnable
+
+- query-to-seed node scoring
+- graph expansion and subgraph selection
+- path or evidence scoring
+- optional multi-step traversal policy refinement
+
+---
+
+## Phased Research Program
+
+### Phase 1 — Symbolic Lower Bound
+
+Goal: establish a clean lower bound and a trustworthy debugging surface.
+
+- Build the unified temporal graph schema
+- Build adapters for LongMemEval-V2, LoCoMo, and TGB 2.0
+- Implement a symbolic retriever using temporal filtering, typed-edge expansion, and provenance-preserving ranking
+- Compare against flat RAG and other simple baselines
+
+Deliverable: a strong non-learned baseline that verifies the graph representation is useful before adding model complexity.
+
+### Phase 2 — Core Learnable Retriever
+
+Goal: make the retrieval process itself the main research contribution.
+
+- Train a **learnable seed scorer** from queries to candidate nodes
+- Train a **query-conditioned temporal GNN expansion module** to grow task-specific subgraphs
+- Use answer supervision, evidence supervision, and temporal consistency objectives
+
+Deliverable: the main TCGM model, where topology and time are part of a learned retrieval policy rather than a fixed traversal rule.
+
+### Phase 3 — Stronger Reasoning Layer
+
+Goal: increase novelty and isolate where gains come from.
+
+- Add a learnable path scorer for multi-hop evidence ranking, or
+- Add RL fine-tuning for multi-step traversal and stopping decisions
+- Evaluate whether learned reasoning improves accuracy, evidence quality, and efficiency over Phase 2
+
+Deliverable: a stronger version of TCGM with richer ablations over topology, temporal signals, and learning signals.
+
+---
+
 ## Immediate Experimental Priorities
 
 1. Define the unified temporal graph schema.
 2. Build dataset adapters for LongMemEval-V2 and LoCoMo first.
-3. Establish flat RAG and simple graph-retrieval baselines.
-4. Add temporal and provenance-focused evaluation.
-5. Use TGB 2.0 to isolate whether failures come from temporal reasoning or upstream graph construction.
+3. Establish flat RAG and symbolic graph-retrieval baselines.
+4. Define supervision targets for learnable retrieval: answer nodes, evidence nodes, and time-consistent paths.
+5. Use TGB 2.0 to isolate whether failures come from temporal reasoning, retrieval policy, or upstream graph construction.
