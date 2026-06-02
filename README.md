@@ -59,7 +59,7 @@ Input (conversation / KG / agent trajectory)
 | 2 | [LoCoMo](datasets/LoCoMo/) | **Robustness A** — long conversational memory | Multi-session human dialogues | 10 conversations, ~5K+ turns | 2024 |
 | 3 | [TGB 2.0](datasets/TGB-V2/) | **Robustness B** — temporal graph core | Temporal knowledge graphs | `tkgl-smallpedia` (prototype), `tkgl-icews` (scale) | 2024 |
 
-See [`docs/`](docs/) for detailed dataset documentation, the [`research_agenda.md`](docs/research_agenda.md) roadmap, the [`model_blueprint.md`](docs/model_blueprint.md) phased method plan, the [`graph_schema.md`](docs/graph_schema.md) unified graph specification, and the [`experiment_plan.md`](docs/experiment_plan.md) experimental roadmap.
+See [`docs/`](docs/) for detailed dataset documentation, the [`research_agenda.md`](docs/research_agenda.md) roadmap, the [`model_blueprint.md`](docs/model_blueprint.md) phased method plan, the [`graph_schema.md`](docs/graph_schema.md) unified graph specification, the [`adapter_spec.md`](docs/adapter_spec.md) dataset adapter contract, and the [`experiment_plan.md`](docs/experiment_plan.md) experimental roadmap.
 
 ---
 
@@ -101,6 +101,7 @@ TCGM/
 │   ├── dataset_LoCoMo.md
 │   ├── dataset_TGB.md
 │   ├── graph_schema.md
+│   ├── adapter_spec.md
 │   ├── experiment_plan.md
 │   ├── research_agenda.md
 │   └── model_blueprint.md
@@ -116,6 +117,7 @@ TCGM/
 - [x] Research questions and hypotheses finalized in `docs/research_agenda.md`
 - [x] Three-phase method roadmap finalized in `docs/model_blueprint.md`
 - [x] Unified graph schema draft in `docs/graph_schema.md`
+- [x] Dataset adapter specification draft in `docs/adapter_spec.md`
 - [x] Experimental roadmap draft in `docs/experiment_plan.md`
 - [ ] Unified temporal graph schema design
 - [ ] Dataset adapters (LongMemEval-V2 → graph, LoCoMo → graph, TGB → unified format)
