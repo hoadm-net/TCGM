@@ -1,0 +1,26 @@
+{
+  "dataset": "lmev2",
+  "errors": [],
+  "warnings": [],
+  "stats": {
+    "node_count": 56476,
+    "edge_count": 143957,
+    "provenance_count": 50930,
+    "query_count": 451,
+    "node_type_distribution": {
+      "Episode": 1870,
+      "Event": 48609,
+      "Entity": 5997
+    },
+    "question_type_distribution": {
+      "dynamic-environment": 86,
+      "procedure": 74,
+      "static-environment": 134,
+      "procedure-abs": 32,
+      "dynamic-environment-abs": 41,
+      "static-environment-abs": 55,
+      "errors-gotchas": 29
+    }
+  },
+  "ok": true
+}

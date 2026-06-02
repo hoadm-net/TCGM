@@ -1,0 +1,1 @@
+"""tcgm.adapters package."""

@@ -26,3 +26,6 @@ datasets/
 # Logs / temp
 *.log
 *.tmp
+
+# Generated artifacts (Parquet outputs of adapters — too large for git)
+artifacts/adapters/**/*.parquet
