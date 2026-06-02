@@ -59,7 +59,7 @@ Input (conversation / KG / agent trajectory)
 | 2 | [LoCoMo](datasets/LoCoMo/) | **Robustness A** — long conversational memory | Multi-session human dialogues | 10 conversations, ~5K+ turns | 2024 |
 | 3 | [TGB 2.0](datasets/TGB-V2/) | **Robustness B** — temporal graph core | Temporal knowledge graphs | `tkgl-smallpedia` (prototype), `tkgl-icews` (scale) | 2024 |
 
-See [`docs/`](docs/) for detailed dataset documentation.
+See [`docs/`](docs/) for detailed dataset documentation and the [`research_agenda.md`](docs/research_agenda.md) roadmap.
 
 ---
 
@@ -75,7 +75,8 @@ TCGM/
 ├── docs/
 │   ├── dataset_LongMemEval-V2.md
 │   ├── dataset_LoCoMo.md
-│   └── dataset_TGB.md
+│   ├── dataset_TGB.md
+│   └── research_agenda.md
 └── venv/
 ```
 
@@ -85,6 +86,7 @@ TCGM/
 
 - [x] Dataset collection: LongMemEval-V2, LoCoMo
 - [x] Dataset collection: TGB 2.0 (`tkgl-smallpedia` — 1.1M edges, 47k nodes)  ← `datasets/TGB-V2/`
+- [x] Research questions and hypotheses finalized in `docs/research_agenda.md`
 - [ ] Unified temporal graph schema design
 - [ ] Dataset adapters (LongMemEval-V2 → graph, LoCoMo → graph, TGB → unified format)
 - [ ] Baseline: flat RAG vs. temporal subgraph retrieval
